@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer Connect</title>
+</head>
+<body>
+<form th:action="@{/adminDeleteTeam}" method="post">
+    <table>
+        <tr>
+
+            <th th:style="${'border: 16px'}">Team ID</th>
+            <th th:style="${'border: 16px'}">NOM</th>
+            <th th:style="${'border: 16px'}">Goals</th>
+            <th th:style="${'border: 16px'}">Wins</th>
+            <th th:style="${'border: 16px'}">Looses</th>
+            <th th:style="${'border: 16px'}">Draws</th>
+
+        </tr>
+        <tr th:each="rank : ${rank}">
+
+            <td th:text="${rank.teamName}"/>
+            <td th:text="${rank.nom}"/>
+            <td th:text="${rank.goals}"/>
+            <td th:text="${rank.wins}"/>
+            <td th:text="${rank.losses}"/>
+            <td th:text="${rank.draws}"/>
+
+
+        </tr>
+    </table>
+</form>
+</body>
+</html>

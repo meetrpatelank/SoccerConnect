@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Soccer Connect</title>
+</head>
+<body>
+<h2>Score a Game</h2>
+<form th:action="@{/score}" method="post" th:object="${teamStats}">
+
+  <p th:text="${game.team1Name} + ' goals:'"></p>
+  <input type="number" th:field="*{team1Goals}" min="0"/>
+  <input type="hidden" th:field="*{team1Id}" th:value="${game.team1Id}"/>
+  <p th:text="${game.team2Name} + ' goals:'"></p>
+  <input type="number" th:field="*{team2Goals}" min="0"/>
+  <input type="hidden" th:field="*{team2Id}" th:value="${game.team2Id}"/>
+  <input type="hidden" name="gameId" th:value="${game.getGameId()}"/>
+  <h3 th:text="${game.team1Name} + ' players:'"></h3>
+  <table>
+    <tr>
+      <th></th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Saves</th>
+      <th>Yellow Card</th>
+      <th>Red Card</th>
+      <th>Man of the match</th>
+    </tr>
+    <tr th:each="playerStat, itemStat : ${teamStats.team1PlayersStats}">
+      <td th:text="${playerStat.getPlayerName()}"></td>
+      <input type="hidden" th:name="|team1PlayersStats[${itemStat.index}].playerId|" th:value="${playerStat.getPlayerId()}" required/>
+      <td><input type="number" th:name="|team1PlayersStats[${itemStat.index}].goals|" min="0" required/></td>
+      <td><input type="number" th:name="|team1PlayersStats[${itemStat.index}].asst|" min="0" required/></td>
+      <td><input type="number" th:name="|team1PlayersStats[${itemStat.index}].goalsSaved|" min="0" required/></td>
+      <td><input type="number" th:name="|team1PlayersStats[${itemStat.index}].yellowCards|" min="0" required/></td>
+      <td><input type="number" th:name="|team1PlayersStats[${itemStat.index}].redCards|" min="0" required/></td>
+      <td><input type="number" th:name="|team1PlayersStats[${itemStat.index}].mom|" min="0" max="1" required/></td>
+    </tr>
+  </table>
+
+  <h3 th:text="${game.team2Name} + ' players:'"></h3>
+  <table>
+    <tr>
+      <th></th>
+      <th>Goals</th>
+      <th>Assists</th>
+      <th>Saves</th>
+      <th>Yellow Card</th>
+      <th>Red Card</th>
+      <th>Man of the match</th>
+    </tr>
+    <tr th:each="playerStat, itemStat : ${teamStats.team2PlayersStats}">
+      <td th:text="${playerStat.getPlayerName()}"></td>
+      <input type="hidden" th:name="|team2PlayersStats[${itemStat.index}].playerId|" th:value="${playerStat.getPlayerId()}" required/>
+      <td><input type="number" th:name="|team2PlayersStats[${itemStat.index}].goals|" min="0" required/></td>
+      <td><input type="number" th:name="|team2PlayersStats[${itemStat.index}].asst|" min="0" required/></td>
+      <td><input type="number" th:name="|team2PlayersStats[${itemStat.index}].goalsSaved|" min="0" required/></td>
+      <td><input type="number" th:name="|team2PlayersStats[${itemStat.index}].yellowCards|" min="0" required/></td>
+      <td><input type="number" th:name="|team2PlayersStats[${itemStat.index}].redCards|" min="0" required/></td>
+      <td><input type="number" th:name="|team2PlayersStats[${itemStat.index}].mom|" min="0" max="1" required/></td>
+    </tr>
+  </table>
+
+  <p><input type="submit" value="Submit" /></p>
+</form>
+</body>
+</html>

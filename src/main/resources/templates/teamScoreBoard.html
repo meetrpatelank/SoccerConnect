@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Score Board</title>
+</head>
+<body>
+<h2>Score Board</h2>
+<table th:action="@{/score}" method="post">
+
+   <th th:style="${'border: 16px'}">Team1 Goals</th>
+   <th th:style="${'border: 16px'}">Team2 Goals</th>
+    <tr>
+    <td th:each="teamGoal : ${teamGoal}">
+       <p th:text="${teamGoal}"></p>
+    </td>
+    </tr>
+</table>
+<p><a th:href="@{/returnHome}">Return to Welcome Page</a></p>
+</body>
+</html>

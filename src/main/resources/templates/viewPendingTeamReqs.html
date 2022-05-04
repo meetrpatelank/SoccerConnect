@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer Connect</title>
+</head>
+<body>
+<p>Sent:</p>
+<table>
+    <tr>
+        <th>Team Name</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="request : ${requestsSent}">
+        <td th:text="${request.key}"/>
+        <td th:text="${request.value}"/>
+    </tr>
+</table>
+<p>Received:</p>
+    <table>
+        <tr>
+            <th>Team Name</th>
+            <th>Accept</th>
+            <th>Reject</th>
+        </tr>
+        <tr th:each="request : ${requestsReceived}">
+            <form th:action="@{/acceptTeamRequest}" method="post">
+                <td th:text="${request.value}"/>
+                <td><button type="submit" th:value="${request.key}" name="acceptReqIdTeam">Accept</button></td>
+             </form>
+            <form th:action="@{/rejectTeamRequest}" method="post">
+                <td><button type="submit" th:value="${request.key}" name="rejectReqIdTeam">Reject</button></td>
+            </form>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer Connect</title>
+</head>
+<body>
+<form th:action="@{/sendTeamRequest}" method="post">
+    <table>
+    <tr>
+        <th>Team Name</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="team : ${teams}">
+        <td th:text="${team.name}"/>
+        <td><button type="submit" th:value="${team.userId}" name="team">Send Request</button></td>
+    </tr>
+    </table>
+</form>
+</body>
+</html>

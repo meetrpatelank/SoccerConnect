@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer Connect</title>
+</head>
+<h2>Team Stats</h2>
+<body>
+    <table>
+    <tr>
+        <th>Number of Matches</th>
+        <th>Goals</th>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Draws</th>
+    </tr>
+    <tr>
+        <td th:text="${teamStats.nom}"/>
+        <td th:text="${teamStats.goals}"/>
+        <td th:text="${teamStats.wins}"/>
+        <td th:text="${teamStats.losses}"/>
+        <td th:text="${teamStats.draws}"/>
+    </tr>
+    </table>
+</body>
+</html>

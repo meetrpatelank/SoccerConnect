@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Team Stats</h1>
+    <table>
+        <tr>
+            <td><b>Team Name</b></td>
+            <td><b>NOM</b></td>
+            <td><b>Goals</b></td>
+            <td><b>Wins</b></td>
+            <td><b>Losses</b></td>
+            <td><b>Draws</b></td>
+        </tr>
+        <tr th:each="teamStat: ${teamStats}">
+            <td th:text="${teamStat.teamName}"></td>
+
+            <td th:text="${teamStat.nom}"></td>
+            <td th:text="${teamStat.goals}"></td>
+            <td th:text="${teamStat.wins}"></td>
+            <td th:text="${teamStat.losses}"></td>
+            <td th:text="${teamStat.draws}"></td>
+        </tr>
+    </table>
+</body>
+</html>

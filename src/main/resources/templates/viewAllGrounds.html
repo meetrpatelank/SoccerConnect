@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer Connect</title>
+</head>
+<body>
+<form th:action="@{/adminDeleteGround}" method="post">
+    <table>
+        <tr>
+            <th>Ground Name</th>
+            <th>Ground Address</th>
+            <th>Ground postal_code</th>
+            <th>Ground contact</th>
+            <th>Ground email</th>
+            <th>Remove ground</th>
+        </tr>
+        <tr th:each="ground : ${grounds}">
+            <td th:text="${ground.groundName}"/>
+            <td th:text="${ground.address}"/>
+            <td th:text="${ground.postalCode}"/>
+            <td th:text="${ground.contact}"/>
+            <td th:text="${ground.email}"/>
+            <td><button type="submit" th:value="${ground.groundId}" name="ground">Delete Ground</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

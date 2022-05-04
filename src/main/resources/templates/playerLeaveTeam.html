@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Player leave team</h1>
+    <form th:action="@{/removeTeam}" method="post">
+        <table>
+            <tr>
+                <th>Player</th>
+                <th>Status</th>
+            </tr>
+            <tr th:each="team : ${playersTeams}">
+                <td th:text="${team.name}"/>
+                <td><button type="submit" th:value="${team.userId}" name="team">Leave Team</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

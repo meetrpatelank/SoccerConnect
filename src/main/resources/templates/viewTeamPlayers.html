@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer Connect</title>
+</head>
+<body>
+<form th:action="@{/deletePlayer}" method="post">
+    <table>
+    <tr>
+        <th>Player</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="player : ${teamPlayers}">
+        <td th:text="${player.name}"/>
+        <td><button type="submit" th:value="${player.userId}" name="player">Remove Player</button></td>
+    </tr>
+    </table>
+</form>
+</body>
+</html>

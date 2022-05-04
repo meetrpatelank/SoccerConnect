@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Man of The Match</title>
+</head>
+<body>
+<h2>Man of the Match :</h2>
+<table th:action="@{/score}" method="post">
+
+  <th th:style="${'border: 16px'}">Man of The Match Player ID is : <span th:text="${momName}"></span> </th>
+    
+</table>
+<p><a th:href="@{/returnHome}">Return to Welcome Page</a></p>
+
+</body>
+</html>

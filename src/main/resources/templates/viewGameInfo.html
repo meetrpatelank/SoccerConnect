@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Score Board</title>
+</head>
+<body>
+<h2>Score Board</h2>
+<table>
+    <tr>
+        <th th:style="${'border: 16px'}">Team1 Goals</th>
+        <th th:style="${'border: 16px'}">Team2 Goals</th>
+        <th th:style="${'border: 16px'}">Man of the Match</th>
+    </tr>
+    <tr>
+        <td th:text="${game.team1Goals}"/>
+        <td th:text="${game.team2Goals}"/>
+        <td th:text="${game.mom}"/>
+    </tr>
+</table>
+<p><a th:href="@{/returnHome}">Return to Welcome Page</a></p>
+</body>
+</html>

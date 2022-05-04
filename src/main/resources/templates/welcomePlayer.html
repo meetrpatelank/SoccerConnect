@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer Connect</title>
+</head>
+<body>
+<h1>Welcome Player! You have logged in.</h1>
+<p><a th:href="@{/viewPlayerStats}">My stats</a></p>
+<p><a th:href="@{/teams}">View Teams</a></p>
+<p><a th:href="@{/pendingTeamRequests}">Pending Requests</a></p>
+<p><a th:href="@{/playerViewTeamStats}">View Team stats</a></p>
+<p><a th:href="@{/viewPlayerTeams}">Leave a Team</a></p>
+<p><a th:href="@{/logout}" >Logout</a></p>
+</body>
+</html>

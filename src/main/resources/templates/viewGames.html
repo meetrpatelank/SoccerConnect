@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Soccer Connect</title>
+</head>
+<body>
+<form th:action="@{/scoreGame}" method="post">
+  <table>
+    <tr>
+      <th>Match ID</th>
+      <th>Team1</th>
+      <th>Team2</th>
+      <th>Ground</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Select Option</th>
+    </tr>
+    <tr th:each="game : ${games}">
+      <td th:text="${game.gameId}"/>
+      <td th:text="${game.team1Name}"/>
+      <td th:text="${game.team2Name}"/>
+      <td th:text="${game.groundName}"/>
+      <td th:text="${game.date}"/>
+      <td th:text="${game.time}"/>
+      <td>
+        <button type="submit" th:value="${game.gameId}" name="score">Score Game</button>
+        <button type="submit" th:value="${game.gameId}" name="delete">Delete Game</button>
+        <button type="submit" th:value="${game.gameId}" name="view">View Score</button>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

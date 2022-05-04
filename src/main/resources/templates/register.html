@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+<h2>Register</h2>
+
+
+
+<form th:action="@{/registersubmission}" method="post">
+    <p> Register as:
+    <select name="role" id="role">
+        <option value="1">Player</option>
+        <option value="2">Team</option>
+    </select></p>
+    <p>Email ID: <input type="email" th:name="email" required/></p>
+    <p>Name/Team Name: <input type="text" th:name="name" required/></p>
+    <p>Mobile no: <input type="text" th:name="mobile" required/></p>
+    <p>Password: <input type="password" th:name="password" required/></p>
+    <p>Confirm Password: <input type="password" th:name="repassword" required/></p>
+    <label for="category">Choose category:</label>
+    <select name="category" id="category" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+
+</body>
+</html>

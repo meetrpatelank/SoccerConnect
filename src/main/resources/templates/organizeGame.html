@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Soccer Connect</title>
+</head>
+<body>
+<h2>Organize a Game</h2>
+<form th:action="@{/organize}" method="post">
+    <p>Category :
+        <select name="category" id="category">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </p>
+    <p>Team 1:
+        <select name="team1Id">
+            <th:block th:each="team : ${teams}">
+            <option th:value="${team.userId}" th:text="${team.name}"></option>
+            </th:block>
+        </select>
+    </p>
+    <p>Team 2:
+        <select name="team2Id">
+            <th:block th:each="team : ${teams}">
+                <option th:value="${team.userId}" th:text="${team.name}"></option>
+            </th:block>
+        </select>
+    </p>
+    <p>Stadium:
+        <select name="groundId">
+            <th:block th:each="ground : ${grounds}">
+            <option th:value="${ground.groundId}" th:text="${ground.groundName}"></option>
+            </th:block>
+        </select>
+    </p>
+    <p>Date: <input type="date" th:name="date" required/></p>
+    <p>Time: <input type="time" th:name="time" required/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+</body>
+</html>

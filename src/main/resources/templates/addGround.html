@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add a Ground</title>
+</head>
+<body>
+
+<h2>Registration for a Ground</h2>
+<form th:action="@{/groundSubmission}" method="post">
+    <p>Ground name: <input type="text" th:name="groundName" required/></p>
+    <p>Location: <input type="text" th:name="address" required/></p>
+    <p>Postal Code: <input type="text" th:name="postalCode" required/></p>
+    <p>Contact Number: <input type="text" th:name="contact" required/></p>
+    <p>Email: <input type="text" th:name="email" required/></p>
+    
+<p><input type="submit" value="Submit" /></p>
+</form>
+
+</body>
+</html>

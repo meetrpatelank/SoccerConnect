@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>My Stats</h1>
+            <p>
+                <td>No. of matches: </td>
+                <b><td th:text="${playerStats.nom}" style="font-weight: bold"></td></b>
+            </p>
+            <p>
+                <td>Goals: </td>
+                <b><td th:text="${playerStats.goals}" style="font-weight: bold"></td></b>
+            </p>
+                <td>Assists: </td>
+                <b><td th:text="${playerStats.asst}" style="font-weight: bold"></td></b>
+            <p>
+                <td>Goals saved: </td>
+                <b><td th:text="${playerStats.goalsSaved}" style="font-weight: bold"></td></b>
+            </p>
+            <p>
+                <td>Yellow cards: </td>
+                <b><td th:text="${playerStats.yellowCards}" style="font-weight: bold"></td></b>
+            </p>
+            <p>
+                <td>Red cards: </td>
+                <b><td th:text="${playerStats.redCards}" style="font-weight: bold"></td></b>
+            </p>
+            <p>
+                <td>Man of the match: </td>
+                <b><td th:text="${playerStats.mom}" style="font-weight: bold"></td></b>
+            </p>
+
+</body>
+</html>
